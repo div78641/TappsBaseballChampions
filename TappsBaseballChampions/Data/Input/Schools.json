@@ -1,0 +1,17 @@
+﻿{
+  "Schools": [
+    {
+      "id": "lca",
+      "name": "Longview Christian Academy"
+    },
+    {
+      "id": "fba",
+      "name": "First Baptist Academy"
+    },
+    {
+      "id": "ccc",
+      "name": "Conroe Covenant Christian"
+    }
+  ]
+}
+
