@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TappsBaseballChampions", "TappsBaseballChampions\TappsBaseballChampions.csproj", "{17E0D4D0-EDB9-489F-A584-0A1EB72D8DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E0D4D0-EDB9-489F-A584-0A1EB72D8DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E0D4D0-EDB9-489F-A584-0A1EB72D8DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E0D4D0-EDB9-489F-A584-0A1EB72D8DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E0D4D0-EDB9-489F-A584-0A1EB72D8DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBEF6C68-05F9-4E43-851D-2400159F511D}
+	EndGlobalSection
+EndGlobal
