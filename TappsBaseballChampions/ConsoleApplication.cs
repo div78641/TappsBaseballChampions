@@ -58,7 +58,7 @@ public sealed class ConsoleApplication
             _logger.LogDebug("Number of Input Files: [{files}]", yearFiles.Length);
             foreach (var file in yearFiles)
             {
-                _logger.LogDebug(file.FullName);
+                _logger.LogDebug("Fully qualified path: {path}", file.FullName);
                 // parse json file into object 
                 var year = DeserializeJsonFromFile<Year>(file.FullName);
                 _logger.LogDebug(year.ID.ToString());
@@ -96,7 +96,7 @@ public sealed class ConsoleApplication
         _logger.LogInformation("Gathering Options");
         _options = new Options() { InputFolder = "", OutputFolder = "" };
         _configuration.GetSection("Options").Bind(_options);
-        _logger.LogDebug(_options.InputFolder);
+        _logger.LogDebug("Input Folder {input}", _options.InputFolder);
         _logger.LogInformation("Options Gathered");
     }
 
