@@ -1,4 +1,4 @@
-namespace TappsBaseballWeb.Data;
+namespace TappsBaseballChampions.Models.Data.Output;
 
 public class FourthPlace : Trophy {
     public FourthPlace()

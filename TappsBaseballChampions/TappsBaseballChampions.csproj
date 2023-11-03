@@ -29,6 +29,7 @@
     <None Remove="Models\Data\" />
     <None Remove="Models\Data\Input\" />
     <None Remove="Models\Data\Output\" />
+    <None Remove="Models\Constants\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -39,6 +40,7 @@
     <Folder Include="Models\Data\" />
     <Folder Include="Models\Data\Input\" />
     <Folder Include="Models\Data\Output\" />
+    <Folder Include="Models\Constants\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">

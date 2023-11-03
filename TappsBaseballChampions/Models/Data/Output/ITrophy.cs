@@ -1,4 +1,4 @@
-namespace TappsBaseballWeb.Data;
+namespace TappsBaseballChampions.Models.Data.Output;
 
 public interface ITrophy {
     public int Total { get; }

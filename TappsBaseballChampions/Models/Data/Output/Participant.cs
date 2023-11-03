@@ -1,4 +1,4 @@
-namespace TappsBaseballWeb.Data;
+namespace TappsBaseballChampions.Models.Data.Output;
 
 public class Participant {
     public string? Id { get; set; }

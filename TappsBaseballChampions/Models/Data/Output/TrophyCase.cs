@@ -1,4 +1,4 @@
-namespace TappsBaseballWeb.Data;
+namespace TappsBaseballChampions.Models.Data.Output;
 
 public sealed class TrophyCase {
     public FirstPlace? FirstPlaceFinishes { get; set; }

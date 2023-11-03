@@ -3,8 +3,15 @@ using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using TappsBaseballChampions.Models.Configuration;
+using TappsBaseballChampions.Models.Constants;
 using TappsBaseballChampions.Models.Data.Input;
+using TappsBaseballChampions.Models.Data.Output;
 using static System.IO.Directory;
+using FourthPlaceIn = TappsBaseballChampions.Models.Data.Input.FourthPlace;
+using SecondPlaceIn = TappsBaseballChampions.Models.Data.Input.SecondPlace;
+using ThirdPlaceIn = TappsBaseballChampions.Models.Data.Input.ThirdPlace;
+using YearIn = TappsBaseballChampions.Models.Data.Input.Year;
+using YearOut = TappsBaseballChampions.Models.Data.Output.Year;
 
 public sealed class ConsoleApplication
 {
@@ -13,8 +20,9 @@ public sealed class ConsoleApplication
 
     private FileInfo[]? _inputFiles { get; set; }
     private Options? _options { get; set; }
-    private List<Year>? _yearsOfCompetition { get; set; }
+    private List<YearIn>? _yearsOfCompetition { get; set; }
     private Schools? _schools { get; set; }
+    private List<Participant>? _participants { get; set; }
 
     public ConsoleApplication(ILogger<ConsoleApplication> logger, IConfiguration configuration)
     {
@@ -37,6 +45,10 @@ public sealed class ConsoleApplication
         LoadInputFiles();
         LoadYearsOfCompetition();
         LoadSchoolInformation();
+        if (_participants == null)
+        {
+            _participants = new List<Participant>();
+        }
     }
 
     private void LoadYearsOfCompetition()
@@ -46,7 +58,7 @@ public sealed class ConsoleApplication
         {
             if (_yearsOfCompetition == null)
             {
-                _yearsOfCompetition = new List<Year>();
+                _yearsOfCompetition = new List<YearIn>();
             }
             else
             {
@@ -60,8 +72,8 @@ public sealed class ConsoleApplication
             {
                 _logger.LogDebug("Fully qualified path: {path}", file.FullName);
                 // parse json file into object 
-                var year = DeserializeJsonFromFile<Year>(file.FullName);
-                _logger.LogDebug(year.ID.ToString());
+                var year = DeserializeJsonFromFile<YearIn>(file.FullName);
+                _logger.LogDebug("Year of Competition {year}", year.ID.ToString());
                 _yearsOfCompetition.Add(year);
             }
             _logger.LogDebug("Number of Year Objects Created: [{years}]", _yearsOfCompetition.Count);
@@ -97,6 +109,7 @@ public sealed class ConsoleApplication
         _options = new Options() { InputFolder = "", OutputFolder = "" };
         _configuration.GetSection("Options").Bind(_options);
         _logger.LogDebug("Input Folder {input}", _options.InputFolder);
+        _logger.LogDebug("Output Folder {output}", _options.OutputFolder);
         _logger.LogInformation("Options Gathered");
     }
 
@@ -127,8 +140,66 @@ public sealed class ConsoleApplication
     {
         _logger.LogInformation("Start Building History");
         // use list to create report file or files
+        if (_yearsOfCompetition != null)
+        {
+            foreach (var year in _yearsOfCompetition)
+            {
+                if (year.Champion != null)
+                {
+                    AddTrophiesToCase(year.Champion, year.ID);
+                    _logger.LogInformation("Champions added");
+                }
+                if (year.SecondPlace != null)
+                {
+                    AddTrophiesToCase(year.SecondPlace, year.ID);
+                    _logger.LogInformation("Second Place added");
+                }
+                if (year.ThirdPlace != null)
+                {
+                    AddTrophiesToCase(year.ThirdPlace, year.ID);
+                    _logger.LogInformation("Third Place added");
+                }
+                if (year.FourthPlace != null)
+                {
+                    AddTrophiesToCase(year.FourthPlace, year.ID);
+                    _logger.LogInformation("Fourth Place added");
+                }
+            }
+        }
+        else
+        {
+            _logger.LogError("No Years of Competition from which to Build History");
+        }
+
         // for each year in input directory
         _logger.LogInformation("End Building History");
+    }
+
+    private void AddTrophiesToCase<T>(T winner, int? seasonYear) where T : Winner 
+    {
+        switch (winner)
+        {
+            case Champion:
+                ProcessWinner(Places.First, seasonYear, winner);
+                break;
+            case SecondPlaceIn:
+                ProcessWinner(Places.Second, seasonYear, winner);
+                break;
+            case ThirdPlaceIn:
+                ProcessWinner(Places.Third, seasonYear, winner);
+                break;
+            case FourthPlaceIn:
+                ProcessWinner(Places.Fourth, seasonYear, winner);
+                break;
+            default:
+                _logger.LogWarning("Trophy Winner Unknown {winner}", winner.GetType().ToString());
+                break;
+        }
+    }
+
+    private void ProcessWinner<T>(Places place, int? seasonYear, T winner) where T : Winner
+    {
+        throw new NotImplementedException();
     }
 
     private static T DeserializeJsonFromFile<T>(string fullyQualifiedFileName)
