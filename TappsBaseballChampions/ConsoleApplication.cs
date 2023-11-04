@@ -266,12 +266,46 @@ public sealed class ConsoleApplication
             else
             {
                 _logger.LogError("No Participant for {id}", schoolId);
-                _logger.LogError("No Added Trophy for {year} in {division}", seasonYear, division);
+                Participant? freshParticipant = CreateParticipant(schoolId);
+                if (freshParticipant != null)
+                {
+                    UpdateParticipant(freshParticipant, place, seasonYear, schoolId);
+                    _participants.Add(freshParticipant);
+                }
+                else
+                {
+                    _logger.LogError("Participant for {id} could not be created", schoolId);
+                    _logger.LogError("No Added Trophy for {year} in {division}", seasonYear, division);
+                }
             }
         }
         else
         {
             _logger.LogError("Participants Not Found");
+        }
+    }
+
+    private Participant? CreateParticipant(string schoolId)
+    {
+        _logger.LogInformation("Creating New Participant {schoolid}", schoolId);
+        if (_schools != null)
+        {
+            var school = _schools.Items.SingleOrDefault(s => s.Id == schoolId);
+            if (school != null)
+            {
+                Participant participant = new() { Id = schoolId, Name = school.Name };
+                return participant;
+            }
+            else
+            {
+                _logger.LogError("School {id} Missing", schoolId);
+                return null;
+            }
+        }
+        else
+        {
+            _logger.LogError("Schools Do Not Exist");
+            return null;
         }
     }
 
