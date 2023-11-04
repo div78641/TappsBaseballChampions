@@ -35,6 +35,7 @@ public sealed class ConsoleApplication
     {
         _logger.LogInformation("Start Running");
         BuildChampionshipHistory();
+        SaveHistoryToFile();
         _logger.LogInformation("End Run");
     }
 
@@ -180,16 +181,16 @@ public sealed class ConsoleApplication
         switch (winner)
         {
             case Champion:
-                ProcessWinner(Places.First, seasonYear, winner);
+                ProcessWinner(Place.First, seasonYear, winner);
                 break;
             case SecondPlaceIn:
-                ProcessWinner(Places.Second, seasonYear, winner);
+                ProcessWinner(Place.Second, seasonYear, winner);
                 break;
             case ThirdPlaceIn:
-                ProcessWinner(Places.Third, seasonYear, winner);
+                ProcessWinner(Place.Third, seasonYear, winner);
                 break;
             case FourthPlaceIn:
-                ProcessWinner(Places.Fourth, seasonYear, winner);
+                ProcessWinner(Place.Fourth, seasonYear, winner);
                 break;
             default:
                 _logger.LogWarning("Trophy Winner Unknown {winner}", winner.GetType().ToString());
@@ -197,15 +198,146 @@ public sealed class ConsoleApplication
         }
     }
 
-    private void ProcessWinner<T>(Places place, int? seasonYear, T winner) where T : Winner
+    private void ProcessWinner<T>(Place place, int? seasonYear, T winner) where T : Winner
     {
-        throw new NotImplementedException();
+        if (winner.AllTapps != null)
+        {
+            AddToStockpile(place, seasonYear, winner.AllTapps, Division.AllTapps);
+        }
+        if (winner.OneA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.OneA, Division.OneA);
+        }
+        if (winner.OneAndTwoA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.OneAndTwoA, Division.OneAndTwoA);
+        }
+        if (winner.TwoA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.TwoA, Division.TwoA);
+        }
+        if (winner.ThreeA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.ThreeA, Division.ThreeA);
+        }
+        if (winner.FourA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.FourA, Division.FourA);
+        }
+        if (winner.FiveA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.FiveA, Division.FiveA);
+        }
+        if (winner.SixA != null)
+        {
+            AddToStockpile(place, seasonYear, winner.SixA, Division.SixA);
+        }
+        if (winner.DivisionOne != null)
+        {
+            AddToStockpile(place, seasonYear, winner.DivisionOne, Division.DivisionOne);
+        }
+        if (winner.DivisionTwo != null)
+        {
+            AddToStockpile(place, seasonYear, winner.DivisionTwo, Division.DivisionTwo);
+        }
+        if (winner.DivisionThree != null)
+        {
+            AddToStockpile(place, seasonYear, winner.DivisionThree, Division.DivisionThree);
+        }
+        if (winner.DivisionFour != null)
+        {
+            AddToStockpile(place, seasonYear, winner.DivisionFour, Division.DivisionFour);
+        }
+        if (winner.DivisionFive != null)
+        {
+            AddToStockpile(place, seasonYear, winner.DivisionFive, Division.DivisionFive);
+        }
+    }
+
+    private void AddToStockpile(Place place, int? seasonYear, string schoolId, string division)
+    {
+        if (_participants != null)
+        {
+            var participant = _participants.SingleOrDefault(p => p.Id == schoolId);
+            if (participant != null)
+            {
+                UpdateParticipant(participant, place, seasonYear, division);
+            }
+            else
+            {
+                _logger.LogError("No Participant for {id}", schoolId);
+                _logger.LogError("No Added Trophy for {year} in {division}", seasonYear, division);
+            }
+        }
+        else
+        {
+            _logger.LogError("Participants Not Found");
+        }
+    }
+
+    private void UpdateParticipant(Participant participant, Place place, int? seasonYear, string division)
+    {
+        YearOut year = new() { ID = seasonYear, Division = division };
+        switch (place)
+        {
+            case Place.First:
+                participant.TrophyCase!.FirstPlaceFinishes!.Stockpile.Add(year);
+                break;
+            case Place.Second:
+                participant.TrophyCase!.SecondPlaceFinishes!.Stockpile.Add(year);
+                break;
+            case Place.Third:
+                participant.TrophyCase!.ThirdPlaceFinishes!.Stockpile.Add(year);
+                break;
+            case Place.Fourth:
+                participant.TrophyCase!.FourthPlaceFinishes!.Stockpile.Add(year);
+                break;
+            default:
+                _logger.LogWarning("Finish {place} in {year} Unknown", place, seasonYear);
+                break;
+        }
+    }
+
+    private void SaveHistoryToFile()
+    {
+        _logger.LogInformation("Saving Output File");
+
+        var outputDirectory = (_options != null)
+            ? new DirectoryInfo($"{GetCurrentDirectory()}{_options.OutputFolder}")
+            : null;
+
+        if (outputDirectory != null)
+        {
+            if (!outputDirectory.Exists)
+                outputDirectory.Create();
+
+            if (_participants != null)
+            {
+                var fileNamePath = $"{outputDirectory.FullName}/TappsBaseballHistory.json";
+                SerializeJsonToFile<List<Participant>>(_participants, fileNamePath);
+                _logger.LogInformation("Output File Saved");
+            }
+            else
+            {
+                _logger.LogError("No Participants Found");
+            }
+        }
+        else
+        {
+            _logger.LogError("Output File Could Not be Saved");
+        }
     }
 
     private static T DeserializeJsonFromFile<T>(string fullyQualifiedFileName)
     {
         T tObject = JsonSerializer.Deserialize<T>(LoadTextFromFile(fullyQualifiedFileName));
         return tObject;
+    }
+
+    private static void SerializeJsonToFile<T>(T data, string fullyQualifiedFileName)
+    {
+        string json = JsonSerializer.Serialize(data);
+        File.WriteAllText(fullyQualifiedFileName, json);
     }
 
     private static string LoadTextFromFile(string fullyQualifiedFileName)

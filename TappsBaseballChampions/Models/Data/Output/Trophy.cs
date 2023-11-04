@@ -4,6 +4,7 @@ public abstract class Trophy : ITrophy
 {
     public Trophy()
     {
+        Name = string.Empty;
         Stockpile = new List<Year>();
     }
     public int Total => Stockpile.Count;

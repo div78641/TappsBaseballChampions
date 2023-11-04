@@ -1,6 +1,6 @@
 ﻿namespace TappsBaseballChampions.Models.Constants
 {
-    public enum Places
+    public enum Place
 	{
 		First = 1,
 		Second = 2,
