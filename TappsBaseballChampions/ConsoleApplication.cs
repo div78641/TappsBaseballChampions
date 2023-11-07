@@ -269,7 +269,7 @@ public sealed class ConsoleApplication
                 Participant? freshParticipant = CreateParticipant(schoolId);
                 if (freshParticipant != null)
                 {
-                    UpdateParticipant(freshParticipant, place, seasonYear, schoolId);
+                    UpdateParticipant(freshParticipant, place, seasonYear, division);
                     _participants.Add(freshParticipant);
                 }
                 else
