@@ -1,6 +1,18 @@
 ﻿{
   "Schools": [
     {
+      "id": "nwa",
+      "name": "Northwest Academy"
+    },
+    {
+      "id": "tc",
+      "name": "Trinity Christian"
+    },
+    {
+      "id": "lc",
+      "name": "Lubbock Christian"
+    },
+    {
       "id": "lca",
       "name": "Longview Christian Academy"
     },
