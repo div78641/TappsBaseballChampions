@@ -1,12 +1,80 @@
 ﻿{
   "Schools": [
     {
+      "id": "episcopal",
+      "name": "Episcopal"
+    },
+    {
+      "id": "hln",
+      "name": "Houston Lutheran North"
+    },
+    {
+      "id": "fwtc",
+      "name": "Fort Worth Temple Christian"
+    },
+    {
+      "id": "wpc",
+      "name": "Waco Parkview Christian"
+    },
+    {
+      "id": "sbf",
+      "name": "Schulenburg Bishop Forrest"
+    },
+    {
+      "id": "hspx",
+      "name": "Houston St. Pius X"
+    },
+    {
+      "id": "ssp",
+      "name": "Shiner St. Paul"
+    },
+    {
+      "id": "als",
+      "name": "Alvin Living Stones"
+    },
+    {
+      "id": "wc",
+      "name": "Waco Christian"
+    },
+    {
+      "id": "dtc",
+      "name": "Dallas Temple Christian"
+    },
+    {
+      "id": "fwc",
+      "name": "Fort Worth Christian"
+    },
+    {
+      "id": "dl",
+      "name": "Dallas Lutheran"
+    },
+    {
+      "id": "hnc",
+      "name": "Houston Northland Christian"
+    },
+    {
+      "id": "csb",
+      "name": "Beaumont Christian School"
+    },
+    {
+      "id": "fwnc",
+      "name": "Fort Worth Nolan Catholic"
+    },
+    {
+      "id": "dbd",
+      "name": "Dallas Bishop Dunne"
+    },
+    {
+      "id": "dc",
+      "name": "Dallas Christian"
+    },
+    {
       "id": "nwa",
       "name": "Northwest Academy"
     },
     {
-      "id": "tc",
-      "name": "Trinity Christian"
+      "id": "atc",
+      "name": "Addison Trinity Christian"
     },
     {
       "id": "lc",

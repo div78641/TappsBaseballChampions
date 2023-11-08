@@ -1,0 +1,19 @@
+{
+    "Year": 1988,
+    "Champion": {
+        "dI": "atc",
+        "dII": "csb"
+    },
+    "SecondPlace": {
+        "dI": "fwc",
+        "dII": "hnc"
+    },
+    "ThirdPlace": {
+        "dI": "fba",
+        "dII": "dtc"
+    },
+    "FourthPlace": {
+        "dI": "nwa",
+        "dII": "wc"
+    }
+}

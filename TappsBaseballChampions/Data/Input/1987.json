@@ -1,0 +1,19 @@
+{
+    "Year": 1987,
+    "Champion": {
+        "dI": "episcopal",
+        "dII": "csb"
+    },
+    "SecondPlace": {
+        "dI": "nwa",
+        "dII": "hnc"
+    },
+    "ThirdPlace": {
+        "dI": "fba",
+        "dII": "dl"
+    },
+    "FourthPlace": {
+        "dI": "fwc",
+        "dII": "dtc"
+    }
+}

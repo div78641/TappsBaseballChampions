@@ -1,0 +1,21 @@
+{
+    "Year": 1989,
+    "Champion": {
+        "1a": "als",
+        "2a": "ssp",
+        "3a": "hspx"
+    },
+    "SecondPlace": {
+        "1a": "sbf",
+        "2a": "wc",
+        "3a": "atc"
+    },
+    "ThirdPlace": {
+        "1a": "wpc",
+        "2a": "lc",
+        "3a": "fwc",
+        "1a": "dtc",
+        "2a": "fwtc",
+        "3a": "hln"
+    }
+}
