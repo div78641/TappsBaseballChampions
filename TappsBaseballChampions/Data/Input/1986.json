@@ -7,7 +7,7 @@
         "AllTapps": "fwnc"
     },
     "ThirdPlace": {
-        "AllTapps": "csb"
+      "AllTapps": [ "csb" ]
     },
     "FourthPlace": {
         "AllTapps": "nwa"

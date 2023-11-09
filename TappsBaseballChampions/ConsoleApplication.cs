@@ -157,7 +157,7 @@ public sealed class ConsoleApplication
                 }
                 if (year.ThirdPlace != null)
                 {
-                    AddTrophiesToCase(year.ThirdPlace, year.ID);
+                    AddThirdPlacesToCase(year.ThirdPlace, year.ID);
                     _logger.LogInformation("Third Place added");
                 }
                 if (year.FourthPlace != null)
@@ -176,6 +176,101 @@ public sealed class ConsoleApplication
         _logger.LogInformation("End Building History");
     }
 
+    private void AddThirdPlacesToCase(ThirdPlaceIn thirdPlace, int? seasonYear)
+    {
+        if (thirdPlace.AllTapps != null)
+        {
+            foreach (string winner in thirdPlace.AllTapps)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.AllTapps);
+            }
+        }
+        if (thirdPlace.OneA != null)
+        {
+            foreach (string winner in thirdPlace.OneA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.OneA);
+            }
+        }
+        if (thirdPlace.OneAndTwoA != null)
+        {
+            foreach (string winner in thirdPlace.OneAndTwoA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.OneAndTwoA);
+            }
+        }
+        if (thirdPlace.TwoA != null)
+        {
+            foreach (string winner in thirdPlace.TwoA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.TwoA);
+            }
+        }
+        if (thirdPlace.ThreeA != null)
+        {
+            foreach (string winner in thirdPlace.ThreeA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.ThreeA);
+            }
+        }
+        if (thirdPlace.FourA != null)
+        {
+            foreach (string winner in thirdPlace.FourA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.FourA);
+            }
+        }
+        if (thirdPlace.FiveA != null)
+        {
+            foreach (string winner in thirdPlace.FiveA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.FiveA);
+            }
+        }
+        if (thirdPlace.SixA != null)
+        {
+            foreach (string winner in thirdPlace.SixA)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.SixA);
+            }
+        }
+        if (thirdPlace.DivisionOne != null)
+        {
+            foreach (string winner in thirdPlace.DivisionOne)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.DivisionOne);
+            }
+        }
+        if (thirdPlace.DivisionTwo != null)
+        {
+            foreach (string winner in thirdPlace.DivisionTwo)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.DivisionTwo);
+            }
+        }
+        if (thirdPlace.DivisionThree != null)
+        {
+            foreach (string winner in thirdPlace.DivisionThree)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.DivisionThree);
+            }
+        }
+        if (thirdPlace.DivisionFour != null)
+        {
+            foreach (string winner in thirdPlace.DivisionFour)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.DivisionFour);
+            }
+        }
+        if (thirdPlace.DivisionFive != null)
+        {
+            foreach (string winner in thirdPlace.DivisionFive)
+            {
+                AddToStockpile(Place.Third, seasonYear, winner, Division.DivisionFive);
+            }
+        }
+    }
+
     private void AddTrophiesToCase<T>(T winner, int? seasonYear) where T : Winner 
     {
         switch (winner)
@@ -185,9 +280,6 @@ public sealed class ConsoleApplication
                 break;
             case SecondPlaceIn:
                 ProcessWinner(Place.Second, seasonYear, winner);
-                break;
-            case ThirdPlaceIn:
-                ProcessWinner(Place.Third, seasonYear, winner);
                 break;
             case FourthPlaceIn:
                 ProcessWinner(Place.Fourth, seasonYear, winner);

@@ -11,11 +11,8 @@
         "3a": "atc"
     },
     "ThirdPlace": {
-        "1a": "wpc",
-        "2a": "lc",
-        "3a": "fwc",
-        "1a": "dtc",
-        "2a": "fwtc",
-        "3a": "hln"
+      "1a": [ "wpc", "dtc" ],
+      "2a": [ "lc", "fwtc" ],
+      "3a": [ "fwc", "hln" ]
     }
 }

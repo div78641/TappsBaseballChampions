@@ -7,7 +7,7 @@
         "AllTapps": "fba"
     },
     "ThirdPlace": {
-        "AllTapps": "dbd"
+      "AllTapps": [ "dbd" ]
     },
     "FourthPlace": {
         "AllTapps": "nwa"

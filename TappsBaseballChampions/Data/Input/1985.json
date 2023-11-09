@@ -7,7 +7,7 @@
         "AllTapps": "dc"
     },
     "ThirdPlace": {
-        "AllTapps": "nwa"
+      "AllTapps": [ "nwa" ]
     },
     "FourthPlace": {
         "AllTapps": "atc"

@@ -9,8 +9,8 @@
         "dII": "hnc"
     },
     "ThirdPlace": {
-        "dI": "fba",
-        "dII": "dl"
+      "dI": [ "fba" ],
+      "dII": [ "dl" ]
     },
     "FourthPlace": {
         "dI": "fwc",
