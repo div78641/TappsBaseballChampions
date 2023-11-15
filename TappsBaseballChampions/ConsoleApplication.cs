@@ -23,6 +23,7 @@ public sealed class ConsoleApplication
     private List<YearIn>? _yearsOfCompetition { get; set; }
     private Schools? _schools { get; set; }
     private List<Participant>? _participants { get; set; }
+    private List<Annum>? _annos { get; set; }
 
     public ConsoleApplication(ILogger<ConsoleApplication> logger, IConfiguration configuration)
     {
@@ -35,6 +36,7 @@ public sealed class ConsoleApplication
     {
         _logger.LogInformation("Start Running");
         BuildChampionshipHistory();
+        BuildAnnualHistory();
         SaveHistoryToFile();
         _logger.LogInformation("End Run");
     }
@@ -49,6 +51,10 @@ public sealed class ConsoleApplication
         if (_participants == null)
         {
             _participants = new List<Participant>();
+        }
+        if (_annos == null)
+        {
+            _annos = new List<Annum>();
         }
     }
 
@@ -174,6 +180,53 @@ public sealed class ConsoleApplication
 
         // for each year in input directory
         _logger.LogInformation("End Building History");
+    }
+
+    private void BuildAnnualHistory()
+    {
+        _logger.LogInformation("Start Building Annual History");
+        if (_participants != null)
+        {
+            foreach (var participant in _participants)
+            {
+                if (participant.TrophyCase?.FirstPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FirstPlaceFinishes?.Stockpile.Count() > 0)
+                    ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.FirstPlaceFinishes.Stockpile, Place.First);
+
+                if (participant.TrophyCase?.SecondPlaceFinishes?.Stockpile != null && participant.TrophyCase?.SecondPlaceFinishes?.Stockpile.Count() > 0)
+                    ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.SecondPlaceFinishes.Stockpile, Place.Second);
+
+                if (participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile != null && participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile.Count() > 0)
+                    ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.ThirdPlaceFinishes.Stockpile, Place.Third);
+
+                if (participant.TrophyCase?.FourthPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FourthPlaceFinishes?.Stockpile.Count() > 0)
+                    ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.FourthPlaceFinishes.Stockpile, Place.Fourth);
+            }
+        }
+        else
+        {
+            _logger.LogError("No participants from which to build an annual history");
+        }
+        _logger.LogInformation("End Building Annual History");
+    }
+
+    private void ProcessStockpile(string? id, string? name, List<YearOut> stockpile, Place finish)
+    {
+        foreach (var trophyYear in stockpile)
+        {
+            var annum = new Annum
+            {
+                SchoolId = id,
+                SchoolName = name,
+                Finish = finish,
+                SeasonYear = trophyYear.ID.ToString(),
+                Division = trophyYear.Division
+            };
+
+            if (_annos == null)
+                _annos = new List<Annum>();
+
+            _annos.Add(annum);
+        }
     }
 
     private void AddThirdPlacesToCase(ThirdPlaceIn thirdPlace, int? seasonYear)
@@ -426,7 +479,7 @@ public sealed class ConsoleApplication
 
     private void SaveHistoryToFile()
     {
-        _logger.LogInformation("Saving Output File");
+        _logger.LogInformation("Saving Output Files");
 
         var outputDirectory = (_options != null)
             ? new DirectoryInfo($"{GetCurrentDirectory()}{_options.OutputFolder}")
@@ -441,16 +494,27 @@ public sealed class ConsoleApplication
             {
                 var fileNamePath = $"{outputDirectory.FullName}/TappsBaseballHistory.json";
                 SerializeJsonToFile<List<Participant>>(_participants, fileNamePath);
-                _logger.LogInformation("Output File Saved");
+                _logger.LogInformation("Overall History File Saved");
             }
             else
             {
                 _logger.LogError("No Participants Found");
             }
+
+            if (_annos != null)
+            {
+                var fileNamePath = $"{outputDirectory.FullName}/TappsBaseballHistoryByYear.json";
+                SerializeJsonToFile<List<Annum>>(_annos, fileNamePath);
+                _logger.LogInformation("Annual History File Saved");
+            }
+            else
+            {
+                _logger.LogError("No Annos Found");
+            }
         }
         else
         {
-            _logger.LogError("Output File Could Not be Saved");
+            _logger.LogError("Output Files Could Not be Saved");
         }
     }
 
