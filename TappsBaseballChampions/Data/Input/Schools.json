@@ -1,6 +1,42 @@
 ﻿{
   "Schools": [
     {
+      "id": "gpsgca",
+      "name": "Grand Prairie Shady Grove Christian Academy"
+    },
+    {
+      "id": "dbl",
+      "name": "Dallas Bishop Lynch"
+    },
+    {
+      "id": "oconnell",
+      "name": "O'Connell"
+    },
+    {
+      "id": "tcl",
+      "name": "Tomball Concordia Lutheran"
+    },
+    {
+      "id": "incarnate",
+      "name": "Incarnate"
+    },
+    {
+      "id": "tbtkgc",
+      "name": "Tyler Bishop T.K. Gorman Catholic"
+    },
+    {
+      "id": "lex",
+      "name": "Lexington Academy"
+    },
+    {
+      "id": "hsh",
+      "name": "Hallettsville Sacred Heart"
+    },
+    {
+      "id": "nai",
+      "name": "NAI"
+    },
+    {
       "id": "episcopal",
       "name": "Episcopal"
     },

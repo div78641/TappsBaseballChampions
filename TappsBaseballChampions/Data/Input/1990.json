@@ -1,0 +1,18 @@
+{
+    "Year": 1990,
+    "Champion": {
+        "1a": "nai",
+        "2a": "hsh",
+        "3a": "hspx"
+    },
+    "SecondPlace": {
+        "1a": "wpc",
+        "2a": "wc",
+        "3a": "fwnc"
+    },
+    "ThirdPlace": {
+      "1a": [ "dtc", "lex" ],
+      "2a": [ "tbtkgc", "fwtc" ],
+      "3a": [ "dc", "incarnate" ]
+    }
+}
