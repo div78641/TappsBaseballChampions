@@ -24,6 +24,7 @@ public sealed class ConsoleApplication
     private Schools? _schools { get; set; }
     private List<Participant>? _participants { get; set; }
     private List<Annum>? _annos { get; set; }
+    private List<DivisionHistory>? _partes { get; set; }
 
     public ConsoleApplication(ILogger<ConsoleApplication> logger, IConfiguration configuration)
     {
@@ -37,6 +38,7 @@ public sealed class ConsoleApplication
         _logger.LogInformation("Start Running");
         BuildChampionshipHistory();
         BuildAnnualHistory();
+        BuildDivisionHistory();
         SaveHistoryToFile();
         _logger.LogInformation("End Run");
     }
@@ -55,6 +57,10 @@ public sealed class ConsoleApplication
         if (_annos == null)
         {
             _annos = new List<Annum>();
+        }
+        if (_partes == null)
+        {
+            _partes = new List<DivisionHistory>();
         }
     }
 
@@ -209,6 +215,89 @@ public sealed class ConsoleApplication
         _logger.LogInformation("End Building Annual History");
     }
 
+    private void BuildDivisionHistory()
+    {
+        _logger.LogInformation("Start Building Division History");
+        if (_participants != null)
+        {
+            foreach (var participant in _participants)
+            {
+                ProcessStockpilesForDivisions(participant, Division.AllTapps);
+                ProcessStockpilesForDivisions(participant, Division.DivisionFive);
+            }
+        }
+        else
+        {
+            _logger.LogError("No participants from which to build the division history");
+        }
+        _logger.LogInformation("End Building Division History");
+    }
+
+    private void ProcessStockpilesForDivisions(Participant participant, string divisionId)
+    {
+        bool shouldAddAfterUpdate = false;
+        _partes ??= new List<DivisionHistory>();
+        var workingDivision = _partes.Where(dh => dh.DivisionId == divisionId).FirstOrDefault();
+        if (workingDivision == null)
+        {
+            workingDivision = new DivisionHistory() { DivisionId = divisionId };
+            shouldAddAfterUpdate = true;
+        }
+
+        if (participant.TrophyCase?.FirstPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FirstPlaceFinishes?.Stockpile.Count() > 0)
+            ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.FirstPlaceFinishes.Stockpile, divisionId, Place.First);
+
+        if (participant.TrophyCase?.SecondPlaceFinishes?.Stockpile != null && participant.TrophyCase?.SecondPlaceFinishes?.Stockpile.Count() > 0)
+            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.SecondPlaceFinishes.Stockpile, Place.Second);
+
+        if (participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile != null && participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile.Count() > 0)
+            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.ThirdPlaceFinishes.Stockpile, Place.Third);
+
+        if (participant.TrophyCase?.FourthPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FourthPlaceFinishes?.Stockpile.Count() > 0)
+            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.FourthPlaceFinishes.Stockpile, Place.Fourth);
+
+        if (shouldAddAfterUpdate)
+        {
+            _partes.Add(workingDivision);
+        }
+    }
+
+    private void ProcessStockpileForDivision(DivisionHistory workingDivision, string? schoolId, string? schoolName, List<YearOut> stockpile, string divisionId, Place finish)
+    {
+        bool shouldAddAfterUpdate = false;
+        var workingSchool = workingDivision.DivisionWinners?.Where(dp => dp.SchoolId == schoolId).FirstOrDefault();
+        if (workingSchool == null)
+        {
+            workingSchool = new DivisionParticipant() { SchoolId = schoolId, SchoolName = schoolName };
+            shouldAddAfterUpdate = true;
+        }
+
+        foreach (var yearOut in stockpile)
+        {
+            if (yearOut.Division == divisionId)
+            {
+                switch (finish)
+                {
+                    case Place.First:
+                        workingSchool.ChampionshipYears?.Add($"{yearOut.ID}");
+                        break;
+                    case Place.Second:
+                        workingSchool.SecondPlaceYears?.Add($"{yearOut.ID}");
+                        break;
+                    case Place.Third:
+                        workingSchool.ThirdPlaceYears?.Add($"{yearOut.ID}");
+                        break;
+                    case Place.Fourth:
+                        workingSchool.FourthPlaceYears?.Add($"{yearOut.ID}");
+                        break;
+                }
+            }
+        }
+
+        if (shouldAddAfterUpdate)
+            workingDivision.DivisionWinners?.Add(workingSchool);
+    }
+
     private void ProcessStockpile(string? id, string? name, List<YearOut> stockpile, Place finish)
     {
         foreach (var trophyYear in stockpile)
@@ -222,8 +311,7 @@ public sealed class ConsoleApplication
                 Division = trophyYear.Division
             };
 
-            if (_annos == null)
-                _annos = new List<Annum>();
+            _annos ??= new List<Annum>();
 
             _annos.Add(annum);
         }
@@ -510,6 +598,17 @@ public sealed class ConsoleApplication
             else
             {
                 _logger.LogError("No Annos Found");
+            }
+
+            if (_partes != null)
+            {
+                var fileNamePath = $"{outputDirectory.FullName}/TappsBaseballHistoryByDivision.json";
+                SerializeJsonToFile<List<DivisionHistory>>(_partes, fileNamePath);
+                _logger.LogInformation("Division History File Saved");
+            }
+            else
+            {
+                _logger.LogError("No Partes Found");
             }
         }
         else
