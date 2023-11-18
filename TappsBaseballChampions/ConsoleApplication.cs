@@ -244,17 +244,49 @@ public sealed class ConsoleApplication
             shouldAddAfterUpdate = true;
         }
 
-        if (participant.TrophyCase?.FirstPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FirstPlaceFinishes?.Stockpile.Count() > 0)
-            ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.FirstPlaceFinishes.Stockpile, divisionId, Place.First);
+        if (participant.TrophyCase?.FirstPlaceFinishes?.Stockpile != null)
+        {
+            if (participant.TrophyCase?.FirstPlaceFinishes?.Stockpile.Count() > 0)
+            {
+                if(participant.TrophyCase.FirstPlaceFinishes.Stockpile.Any(y => y.Division == divisionId))
+                {
+                    ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.FirstPlaceFinishes.Stockpile, divisionId, Place.First);
+                };
+            }
+        }
 
-        if (participant.TrophyCase?.SecondPlaceFinishes?.Stockpile != null && participant.TrophyCase?.SecondPlaceFinishes?.Stockpile.Count() > 0)
-            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.SecondPlaceFinishes.Stockpile, Place.Second);
+        if (participant.TrophyCase?.SecondPlaceFinishes?.Stockpile != null)
+        {
+            if (participant.TrophyCase.SecondPlaceFinishes.Stockpile.Count() > 0)
+            {
+                if (participant.TrophyCase.SecondPlaceFinishes.Stockpile.Any(y => y.Division == divisionId))
+                {
+                    ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.SecondPlaceFinishes.Stockpile, divisionId, Place.Second);
+                };
+            }
+        }
 
-        if (participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile != null && participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile.Count() > 0)
-            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.ThirdPlaceFinishes.Stockpile, Place.Third);
+        if (participant.TrophyCase?.ThirdPlaceFinishes?.Stockpile != null)
+        {
+            if (participant.TrophyCase.ThirdPlaceFinishes.Stockpile.Count() > 0)
+            {
+                if (participant.TrophyCase.ThirdPlaceFinishes.Stockpile.Any(y => y.Division == divisionId))
+                {
+                    ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.ThirdPlaceFinishes.Stockpile, divisionId, Place.Third);
+                };
+            }
+        }
 
-        if (participant.TrophyCase?.FourthPlaceFinishes?.Stockpile != null && participant.TrophyCase?.FourthPlaceFinishes?.Stockpile.Count() > 0)
-            ProcessStockpile(participant.Id, participant.Name, participant.TrophyCase.FourthPlaceFinishes.Stockpile, Place.Fourth);
+        if (participant.TrophyCase?.FourthPlaceFinishes?.Stockpile != null)
+        {
+            if (participant.TrophyCase.FourthPlaceFinishes.Stockpile.Count() > 0)
+            {
+                if (participant.TrophyCase.FourthPlaceFinishes.Stockpile.Any(y => y.Division == divisionId))
+                {
+                    ProcessStockpileForDivision(workingDivision, participant.Id, participant.Name, participant.TrophyCase.FourthPlaceFinishes.Stockpile, divisionId, Place.Fourth);
+                };
+            }
+        }
 
         if (shouldAddAfterUpdate)
         {
