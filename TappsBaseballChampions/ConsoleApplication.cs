@@ -223,6 +223,16 @@ public sealed class ConsoleApplication
             foreach (var participant in _participants)
             {
                 ProcessStockpilesForDivisions(participant, Division.AllTapps);
+                ProcessStockpilesForDivisions(participant, Division.OneA);
+                ProcessStockpilesForDivisions(participant, Division.OneAndTwoA);
+                ProcessStockpilesForDivisions(participant, Division.TwoA);
+                ProcessStockpilesForDivisions(participant, Division.ThreeA);
+                ProcessStockpilesForDivisions(participant, Division.FourA);
+                ProcessStockpilesForDivisions(participant, Division.FiveA);
+                ProcessStockpilesForDivisions(participant, Division.DivisionOne);
+                ProcessStockpilesForDivisions(participant, Division.DivisionTwo);
+                ProcessStockpilesForDivisions(participant, Division.DivisionThree);
+                ProcessStockpilesForDivisions(participant, Division.DivisionFour);
                 ProcessStockpilesForDivisions(participant, Division.DivisionFive);
             }
         }
