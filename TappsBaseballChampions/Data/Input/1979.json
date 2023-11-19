@@ -1,10 +1,10 @@
 ﻿{
   "Year": 1979,
   "Champion": {
-    "AllTapps": "lca"
+    "T": "lca"
   },
   "SecondPlace": {
-    "AllTapps": "fba"
+    "T": "fba"
   }
 }
 

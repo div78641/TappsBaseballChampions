@@ -1,15 +1,15 @@
 {
     "Year": 1986,
     "Champion": {
-        "AllTapps": "fba"
+        "T": "fba"
     },
     "SecondPlace": {
-        "AllTapps": "fwnc"
+        "T": "fwnc"
     },
     "ThirdPlace": {
-      "AllTapps": [ "csb" ]
+      "T": [ "csb" ]
     },
     "FourthPlace": {
-        "AllTapps": "nwa"
+        "T": "nwa"
     }
 }

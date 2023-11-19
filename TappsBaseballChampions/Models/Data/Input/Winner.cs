@@ -4,7 +4,7 @@ namespace TappsBaseballChampions.Models.Data.Input
 {
     public abstract class Winner : IWinner
 	{
-        [JsonPropertyName("AllTapps")]
+        [JsonPropertyName("T")]
         public string? AllTapps { get; set; }
         [JsonPropertyName("1a")]
         public string? OneA { get; set; }

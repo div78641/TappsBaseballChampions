@@ -2,7 +2,7 @@
 {
 	public struct Division
 	{
-		public const string AllTapps = "alltapps";
+		public const string AllTapps = "T";
 		public const string OneA = "1a";
 		public const string OneAndTwoA = "1a/2a";
 		public const string TwoA = "2a";
