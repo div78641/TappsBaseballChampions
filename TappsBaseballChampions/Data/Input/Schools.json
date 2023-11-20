@@ -1,6 +1,18 @@
 ﻿{
   "Schools": [
     {
+      "id": "hsb",
+      "name": "Second Baptist"
+    },
+    {
+      "id": "swc",
+      "name": "Southwest Christian"
+    },
+    {
+      "id": "lhp",
+      "name": "Lakehill Prep"
+    },
+    {
       "id": "gpsgca",
       "name": "Grand Prairie Shady Grove Christian Academy"
     },

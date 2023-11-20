@@ -8,7 +8,7 @@ namespace TappsBaseballChampions.Models.Data.Input
         public List<string>? AllTapps { get; set; }
         [JsonPropertyName("1a")]
         public List<string>? OneA { get; set; }
-        [JsonPropertyName("1a/2a")]
+        [JsonPropertyName("1a2a")]
         public List<string>? OneAndTwoA { get; set; }
         [JsonPropertyName("2a")]
         public List<string>? TwoA { get; set; }

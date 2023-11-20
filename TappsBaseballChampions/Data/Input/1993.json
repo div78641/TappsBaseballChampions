@@ -1,0 +1,18 @@
+{
+    "Year": 1993,
+    "Champion": {
+        "1a": "wpc",
+        "2a": "hsh",
+        "3a": "hspx"
+    },
+    "SecondPlace": {
+        "1a": "ssp",
+        "2a": "wc",
+        "3a": "fwc"
+    },
+    "ThirdPlace": {
+      "1a": [ "lhp", "swc" ],
+      "2a": [ "tcl", "hnc" ],
+      "3a": [ "dc", "dbl" ]
+    }
+}
