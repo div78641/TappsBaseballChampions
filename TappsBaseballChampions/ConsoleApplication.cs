@@ -229,6 +229,7 @@ public sealed class ConsoleApplication
                 ProcessStockpilesForDivisions(participant, Division.ThreeA);
                 ProcessStockpilesForDivisions(participant, Division.FourA);
                 ProcessStockpilesForDivisions(participant, Division.FiveA);
+                ProcessStockpilesForDivisions(participant, Division.SixA);
                 ProcessStockpilesForDivisions(participant, Division.DivisionOne);
                 ProcessStockpilesForDivisions(participant, Division.DivisionTwo);
                 ProcessStockpilesForDivisions(participant, Division.DivisionThree);
