@@ -1,0 +1,21 @@
+{
+    "Year": 2012,
+    "Champion": {
+        "1a2a": "ljbc",
+        "3a": "bbh",
+        "4a": "mc",
+        "5a": "hspx"
+    },
+    "SecondPlace": {
+        "1a2a": "ssp",
+        "3a": "asj",
+        "4a": "fwc",
+        "5a": "hsths"
+    },
+    "ThirdPlace": {
+      "1a2a": [ "bbcs", "rcs" ],
+      "3a": [ "asdscs", "twca" ],
+      "4a": [ "ccjp", "ahps" ],
+      "5a": [ "hchs", "alc" ]
+  }
+}

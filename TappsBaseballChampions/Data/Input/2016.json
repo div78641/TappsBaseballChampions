@@ -1,7 +1,21 @@
 ﻿{
   "Year": 2016,
   "Champion": {
-    "1a2a": "ccc"
+      "1a2a": "trhcs",
+      "3a": "lc",
+      "4a": "hsb",
+      "5a": "ppca"
+  },
+  "SecondPlace": {
+      "1a2a": "ccc",
+      "3a": "lcbac",
+      "4a": "mc",
+      "5a": "bkchs"
+  },
+  "ThirdPlace": {
+    "1a2a": [ "whca", "bbcs" ],
+    "3a": [ "roocs", "kfwa" ],
+    "4a": [ "bbh", "ahps" ],
+    "5a": [ "hsths", "tcl" ]
   }
 }
-

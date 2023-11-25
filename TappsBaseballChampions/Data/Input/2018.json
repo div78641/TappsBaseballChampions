@@ -1,0 +1,24 @@
+{
+    "Year": 2018,
+    "Champion": {
+        "dI": "alc",
+        "dII": "hls",
+        "dIII": "hcc",
+        "dIV": "epfc",
+        "dV": "nbcs"
+    },
+    "SecondPlace": {
+        "dI": "bkchs",
+        "dII": "bbh",
+        "dIII": "lc",
+        "dIV": "pfb",
+        "dV": "mshchs"
+    },
+    "ThirdPlace": {
+        "dI": [ "hsths", "tcl" ],
+        "dII": [ "tas", "sacs" ],
+        "dIII": [ "apca", "twca" ],
+        "dIV": [ "dca", "bbcs" ],
+        "dV": [ "roocs", "ljbc" ]
+    }
+  }

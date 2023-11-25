@@ -1,0 +1,24 @@
+{
+    "Year": 1999,
+    "Champion": {
+        "1a": "ssp",
+        "2a": "baa",
+        "3a": "fwswcs",
+        "4a": "dc",
+        "5a": "atc"
+    },
+    "SecondPlace": {
+        "1a": "tetc",
+        "2a": "lhp",
+        "3a": "asj",
+        "4a": "hsb",
+        "5a": "bkchs"
+    },
+    "ThirdPlace": {
+      "1a": [ "knec", "rcs" ],
+      "2a": [ "btc", "lcc" ],
+      "3a": [ "hnc", "hsh" ],
+      "4a": [ "cciw", "dlc" ],
+      "5a": [ "sacc", "fwnc" ]
+  }
+}

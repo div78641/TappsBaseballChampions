@@ -1,0 +1,27 @@
+{
+    "Year": 2007,
+    "Champion": {
+        "1a": "bbcs",
+        "2a": "rcs",
+        "3a": "knec",
+        "4a": "lc",
+        "5a": "dc",
+        "6a": "hsths"
+    },
+    "SecondPlace": {
+        "1a": "hao",
+        "2a": "ljbc",
+        "3a": "asj",
+        "4a": "apca",
+        "5a": "ppca",
+        "6a": "hspx"
+    },
+    "ThirdPlace": {
+      "1a": [ "dlf", "fwgcs" ],
+      "2a": [ "ssp", "trhcs" ],
+      "3a": [ "twca", "bbh" ],
+      "4a": [ "tas", "btc" ],
+      "5a": [ "mc", "hchs" ],
+      "6a": [ "atc", "dbl" ]
+  }
+}

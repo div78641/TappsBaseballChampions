@@ -1,0 +1,24 @@
+{
+    "Year": 2021,
+    "Champion": {
+        "dI": "mc",
+        "dII": "hls",
+        "dIII": "lcbac",
+        "dIV": "mlca",
+        "dV": "wcs"
+    },
+    "SecondPlace": {
+        "dI": "tcl",
+        "dII": "fwswcs",
+        "dIII": "ltchs",
+        "dIV": "trhcs",
+        "dV": "hsh"
+    },
+    "ThirdPlace": {
+        "dI": [ "fwnc", "hsths" ],
+        "dII": [ "mca", "twca" ],
+        "dIII": [ "cccs", "sjpii" ],
+        "dIV": [ "hccsa", "whca" ],
+        "dV": [ "roocs", "bubcs" ]
+    }
+  }

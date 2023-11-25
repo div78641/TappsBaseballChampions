@@ -1,0 +1,24 @@
+{
+    "Year": 2022,
+    "Champion": {
+        "dI": "ppca",
+        "dII": "hsb",
+        "dIII": "lcbac",
+        "dIV": "mlca",
+        "dV": "wcs"
+    },
+    "SecondPlace": {
+        "dI": "sacc",
+        "dII": "bbh",
+        "dIII": "fwlccs",
+        "dIV": "tctcs",
+        "dV": "ssp"
+    },
+    "ThirdPlace": {
+        "dI": [ "fwnc", "tcl" ],
+        "dII": [ "fwc", "hls" ],
+        "dIII": [ "ltchs", "hnc" ],
+        "dIV": [ "fwtc", "wbrcs" ],
+        "dV": [ "fwccs", "bubcs" ]
+    }
+  }

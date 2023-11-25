@@ -1,8 +1,396 @@
 ﻿{
   "Schools": [
     {
+      "id": "hccs",
+      "name": "Houston Cypress Christian"
+    },
+    {
+      "id": "fwclp",
+      "name": "Fort Worth Christian Life Prep"
+    },
+    {
+      "id": "bgs",
+      "name": "Boerne Geneva School"
+    },
+    {
+      "id": "saacp",
+      "name": "San Antonio Antonian College Prep"
+    },
+    {
+      "id": "fwccs",
+      "name": "Fort Worth Covenant Classical"
+    },
+    {
+      "id": "tctcs",
+      "name": "Temple Central Texas Christian"
+    },
+    {
+      "id": "bubcs",
+      "name": "Bulverde Bracken Christian"
+    },
+    {
+      "id": "hccsa",
+      "name": "Austin Hill Country Christian"
+    },
+    {
+      "id": "mlca",
+      "name": "Midland Classical Academy"
+    },
+    {
+      "id": "sjpii",
+      "name": "Schertz John Paul II"
+    },
+    {
+      "id": "mca",
+      "name": "McKinney Christian Academy"
+    },
+    {
+      "id": "wcs",
+      "name": "Weatherford Christian"
+    },
+    {
+      "id": "wptcs",
+      "name": "Willow Park Trinity Christian"
+    },
+    {
+      "id": "fwases",
+      "name": "Fort Worth All Saints Episcopal"
+    },
+    {
+      "id": "nbcs",
+      "name": "New Braunfels Christian"
+    },
+    {
+      "id": "epfc",
+      "name": "El Paso Faith Christian"
+    },
+    {
+      "id": "fwbcs",
+      "name": "Fort Worth Bethesda"
+    },
+    {
+      "id": "lchcs",
+      "name": "Longview Christian Heritage"
+    },
+    {
+      "id": "fwlccs",
+      "name": "Fort Worth Lake Country Christian"
+    },
+    {
+      "id": "hems",
+      "name": "Houston Emery/Weiner"
+    },
+    {
+      "id": "dpe",
+      "name": "Dallas Parish Episcopal"
+    },
+    {
+      "id": "kfwa",
+      "name": "Katy Faith West"
+    },
+    {
+      "id": "hls",
+      "name": "Houston Lutheran South"
+    },
+    {
+      "id": "abcs",
+      "name": "Austin Brentwood"
+    },
+    {
+      "id": "slp",
+      "name": "Sugar Land Logos Prep"
+    },
+    {
+      "id": "mshchs",
+      "name": "Muenster Sacred Heart"
+    },
+    {
+      "id": "roocs",
+      "name": "Red Oak Ovilla Christian"
+    },
+    {
+      "id": "asdscs",
+      "name": "Austin St. Dominic Savio"
+    },
+    {
+      "id": "hwcs",
+      "name": "Houston Westbury"
+    },
+    {
+      "id": "kolh",
+      "name": "Kerrville Our Lady of the Hills"
+    },
+    {
+      "id": "ccjp",
+      "name": "Corpus Christi John Paul II"
+    },
+    {
+      "id": "dfb",
+      "name": "Dallas First Baptist"
+    },
+    {
+      "id": "dtcs",
+      "name": "Dallas The Covenant"
+    },
+    {
+      "id": "bfa",
+      "name": "Bellville Faith"
+    },
+    {
+      "id": "fwgcs",
+      "name": "Fort Worth Glenview"
+    },
+    {
+      "id": "trhcs",
+      "name": "Tomball Rosehill Christian"
+    },
+    {
+      "id": "dlf",
+      "name": "Dickinson Living Faith"
+    },
+    {
+      "id": "sacs",
+      "name": "San Antonio Christian"
+    },
+    {
+      "id": "wtca",
+      "name": "Waco Texas Christian Academy"
+    },
+    {
+      "id": "esjhs",
+      "name": "Ennis St. John"
+    },
+    {
+      "id": "dces",
+      "name": "DeSoto Canterbury Episcopal"
+    },
+    {
+      "id": "sahchs",
+      "name": "San Antonio Holy Cross"
+    },
+    {
+      "id": "wbrcs",
+      "name": "Waco Bishop Reicher Catholic"
+    },
+    {
+      "id": "wvcps",
+      "name": "Waco Vanguard College Prep"
+    },
+    {
+      "id": "whca",
+      "name": "Watauga Harvest Christian Academy"
+    },
+    {
+      "id": "twca",
+      "name": "The Woodlands Christian Academy"
+    },
+    {
+      "id": "dlh",
+      "name": "Dallas Lighthouse"
+    },
+    {
+      "id": "hcc",
+      "name": "Houston Cypress Community"
+    },
+    {
+      "id": "ahps",
+      "name": "Austin Hyde Park"
+    },
+    {
+      "id": "ppca",
+      "name": "Plano Prestonwood Christian"
+    },
+    {
+      "id": "bsjcs",
+      "name": "Bryan St. Joseph Catholic"
+    },
+    {
+      "id": "flca",
+      "name": "Frisco Legacy"
+    },
+    {
+      "id": "sac",
+      "name": "San Antonio Cornerstone"
+    },
+    {
+      "id": "bbh",
+      "name": "Bullard The Brook Hill School"
+    },
+    {
+      "id": "hao",
+      "name": "Huntsville Alpha Omega"
+    },
+    {
+      "id": "pfb",
+      "name": "Pasadena First Baptist"
+    },
+    {
+      "id": "asa",
+      "name": "Arlington St. Alban's"
+    },
+    {
+      "id": "dca",
+      "name": "Denton Calvary Academy"
+    },
+    {
+      "id": "goc",
+      "name": "Galveston O'Connell"
+    },
+    {
+      "id": "gf",
+      "name": "Grapevine Faith Christian"
+    },
+    {
+      "id": "cccs",
+      "name": "Colleyville Covenant Christian"
+    },
+    {
+      "id": "hsths",
+      "name": "Houston St. Thomas"
+    },
+    {
+      "id": "asma",
+      "name": "Austin St. Michael's Academy"
+    },
+    {
+      "id": "wccs",
+      "name": "Waxahachie Cornerstone"
+    },
+    {
+      "id": "bs",
+      "name": "Burleson Steppingstone"
+    },
+    {
+      "id": "bbcs",
+      "name": "Bryan Brazos Christian"
+    },
+    {
+      "id": "ltchs",
+      "name": "Lubbock Trinity Christian"
+    },
+    {
+      "id": "sfbb",
+      "name": "Sugar Land Ft. Bend Baptist"
+    },
+    {
+      "id": "agp",
+      "name": "Arlington Grace Prepatory"
+    },
+    {
+      "id": "hchs",
+      "name": "Houston Christian"
+    },
+    {
+      "id": "cah",
+      "name": "Carrollton American Heritage"
+    },
+    {
+      "id": "sacc",
+      "name": "San Antonio Central Catholic"
+    },
+    {
+      "id": "bkchs",
+      "name": "Beaumont Kelly Catholic"
+    },
+    {
+      "id": "dlc",
+      "name": "Denton Liberty Christian"
+    },
+    {
+      "id": "fwswcs",
+      "name": "Fort Worth Southwest Christian"
+    },
+    {
+      "id": "lcc",
+      "name": "Leander Cornerstone Christian"
+    },
+    {
+      "id": "btc",
+      "name": "Baytown Christian"
+    },
+    {
+      "id": "rcs",
+      "name": "Rowlett Rockwall Christian"
+    },
+    {
+      "id": "knec",
+      "name": "Kingwood Northeast Christian"
+    },
+    {
+      "id": "tetc",
+      "name": "Tyler East Texas Christian"
+    },
+    {
+      "id": "cciw",
+      "name": "Corpus Christi Incarnate Word"
+    },
+    {
+      "id": "lcbac",
+      "name": "League City Bay Area Christian"
+    },
+    {
+      "id": "cphb",
+      "name": "Cedar Park Hilltop Baptist"
+    },
+    {
+      "id": "asj",
+      "name": "Amarillo San Jacinto"
+    },
+    {
+      "id": "ccca",
+      "name": "Richardson Canyon Creek"
+    },
+    {
+      "id": "ghh",
+      "name": "Granbury Happy Hill"
+    },
+    {
+      "id": "pfca",
+      "name": "Pasadena Faith Christian"
+    },
+    {
+      "id": "sjh",
+      "name": "St. John High"
+    },
+    {
+      "id": "comc",
+      "name": "Community Christian"
+    },
+    {
+      "id": "baa",
+      "name": "Bryan Allen Academy"
+    },
+    {
+      "id": "alc",
+      "name": "Argyle Liberty Christian"
+    },
+    {
+      "id": "apca",
+      "name": "Arlington Pantego Christian"
+    },
+    {
+      "id": "tas",
+      "name": "Tyler All Saints Episcopal"
+    },
+    {
+      "id": "ljbc",
+      "name": "Lake Jackson Brazosport Christian"
+    },
+    {
+      "id": "mc",
+      "name": "Midland Christian"
+    },
+    {
+      "id": "sj",
+      "name": "St. Joseph"
+    },
+    {
+      "id": "cc",
+      "name": "Carrollton Christian"
+    },
+    {
       "id": "hsb",
-      "name": "Second Baptist"
+      "name": "Houston Second Baptist"
     },
     {
       "id": "swc",
@@ -10,7 +398,7 @@
     },
     {
       "id": "lhp",
-      "name": "Lakehill Prep"
+      "name": "Dallas Lakehill Prep"
     },
     {
       "id": "gpsgca",
@@ -114,7 +502,7 @@
     },
     {
       "id": "dc",
-      "name": "Dallas Christian"
+      "name": "Mesquite Dallas Christian"
     },
     {
       "id": "nwa",

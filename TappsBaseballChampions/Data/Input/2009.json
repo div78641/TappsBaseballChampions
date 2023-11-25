@@ -1,0 +1,21 @@
+{
+    "Year": 2009,
+    "Champion": {
+        "1a2a": "ssp",
+        "3a": "tas",
+        "4a": "alc",
+        "5a": "hspx"
+    },
+    "SecondPlace": {
+        "1a2a": "hsh",
+        "3a": "twca",
+        "4a": "hsb",
+        "5a": "dbl"
+    },
+    "ThirdPlace": {
+      "1a2a": [ "whca", "knec" ],
+      "3a": [ "lc", "wvcps" ],
+      "4a": [ "mc", "hln" ],
+      "5a": [ "sacc", "hchs" ]
+  }
+}

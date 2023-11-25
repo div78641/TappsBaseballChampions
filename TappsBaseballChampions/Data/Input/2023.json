@@ -1,0 +1,24 @@
+{
+    "Year": 2023,
+    "Champion": {
+        "dI": "atc",
+        "dII": "bkchs",
+        "dIII": "hccs",
+        "dIV": "fwtc",
+        "dV": "roocs"
+    },
+    "SecondPlace": {
+        "dI": "hsths",
+        "dII": "mc",
+        "dIII": "mca",
+        "dIV": "hnc",
+        "dV": "hsh"
+    },
+    "ThirdPlace": {
+        "dI": [ "saacp", "tcl" ],
+        "dII": [ "fwc", "hsb" ],
+        "dIII": [ "fwlccs", "bgs" ],
+        "dIV": [ "lc", "pfb" ],
+        "dV": [ "fwclp", "ssp" ]
+    }
+  }
