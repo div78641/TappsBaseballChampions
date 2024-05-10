@@ -1,0 +1,24 @@
+﻿{
+  "Year": 2024,
+  "Champion": {
+    "dI": "",
+    "dII": "",
+    "dIII": "",
+    "dIV": "",
+    "dV": ""
+  },
+  "SecondPlace": {
+    "dI": "",
+    "dII": "",
+    "dIII": "",
+    "dIV": "",
+    "dV": ""
+  },
+  "ThirdPlace": {
+    "dI": [ "", "" ],
+    "dII": [ "", "" ],
+    "dIII": [ "", "" ],
+    "dIV": [ "hnc", "" ],
+    "dV": [ "", "" ]
+  }
+}
