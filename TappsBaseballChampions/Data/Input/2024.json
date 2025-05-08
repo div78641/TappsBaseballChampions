@@ -1,24 +1,24 @@
 ﻿{
   "Year": 2024,
   "Champion": {
-    "dI": "",
-    "dII": "",
-    "dIII": "",
-    "dIV": "",
-    "dV": ""
+    "dI": "sacc",
+    "dII": "hsb",
+    "dIII": "bbh",
+    "dIV": "pfb",
+    "dV": "ssp"
   },
   "SecondPlace": {
-    "dI": "",
-    "dII": "",
-    "dIII": "",
-    "dIV": "",
-    "dV": ""
+    "dI": "tcl",
+    "dII": "fwswcs",
+    "dIII": "lcbac",
+    "dIV": "fwccs",
+    "dV": "fwclp"
   },
   "ThirdPlace": {
-    "dI": [ "", "" ],
-    "dII": [ "", "" ],
-    "dIII": [ "", "" ],
-    "dIV": [ "hnc", "" ],
-    "dV": [ "", "" ]
+    "dI": [ "ppca", "hspx" ],
+    "dII": [ "alc", "bkchs" ],
+    "dIII": [ "hccs", "mca" ],
+    "dIV": [ "hnc", "fwtc" ],
+    "dV": [ "hsh", "fwbcs" ]
   }
 }
