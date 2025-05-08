@@ -1,6 +1,10 @@
 ﻿{
   "Schools": [
     {
+      "id": "wlocs",
+      "name": "Waco Live Oak Classical School"
+    },
+    {
       "id": "hccs",
       "name": "Houston Cypress Christian"
     },
