@@ -1,24 +1,24 @@
 {
-    "Year": 2025,
-    "Champion": {
-      "dI": "",
-      "dII": "",
-      "dIII": "",
-      "dIV": "",
-      "dV": ""
-    },
-    "SecondPlace": {
-      "dI": "",
-      "dII": "",
-      "dIII": "",
-      "dIV": "",
-      "dV": ""
-    },
-    "ThirdPlace": {
-      "dI": [ "", "" ],
-      "dII": [ "", "" ],
-      "dIII": [ "", "" ],
-      "dIV": [ "wlocs", "fwccs" ],
-      "dV": [ "", "" ]
-    }
+  "Year": 2025,
+  "Champion": {
+    "dI": "",
+    "dII": "",
+    "dIII": "",
+    "dIV": "hao",
+    "dV": ""
+  },
+  "SecondPlace": {
+    "dI": "",
+    "dII": "",
+    "dIII": "",
+    "dIV": "dca",
+    "dV": ""
+  },
+  "ThirdPlace": {
+    "dI": [ "", "" ],
+    "dII": [ "", "" ],
+    "dIII": [ "", "" ],
+    "dIV": [ "wlocs", "fwccs" ],
+    "dV": [ "roocs", "bfa" ]
   }
+}
