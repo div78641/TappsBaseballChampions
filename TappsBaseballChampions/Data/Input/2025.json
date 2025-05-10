@@ -3,21 +3,21 @@
   "Champion": {
     "dI": "",
     "dII": "",
-    "dIII": "",
+    "dIII": "mca",
     "dIV": "hao",
     "dV": "hsh"
   },
   "SecondPlace": {
     "dI": "",
     "dII": "",
-    "dIII": "",
+    "dIII": "hnc",
     "dIV": "dca",
     "dV": "dfb"
   },
   "ThirdPlace": {
     "dI": [ "", "" ],
     "dII": [ "", "" ],
-    "dIII": [ "", "" ],
+    "dIII": [ "sahchs", "apca" ],
     "dIV": [ "wlocs", "fwccs" ],
     "dV": [ "roocs", "bfa" ]
   }
