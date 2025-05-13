@@ -15,8 +15,8 @@
     "dV": "dfb"
   },
   "ThirdPlace": {
-    "dI": [ "", "" ],
-    "dII": [ "", "" ],
+    "dI": [ "hspx", "alc" ],
+    "dII": [ "hsb", "fwswcs" ],
     "dIII": [ "sahchs", "apca" ],
     "dIV": [ "wlocs", "fwccs" ],
     "dV": [ "roocs", "bfa" ]
